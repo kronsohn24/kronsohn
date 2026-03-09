@@ -68,18 +68,18 @@ footer{ margin-top:auto; background:black; padding:25px; text-align:center;
          border-top:3px solid #d4a017; }
 footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 
-/* Impressum */
-#impressum{ display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+/* Impressum & Datenschutz Popups */
+#impressum,#privacy{ display:none; position:fixed; top:0; left:0; width:100%; height:100%;
             background:rgba(0,0,0,0.95); overflow:auto; padding:50px 20px; z-index:9999; }
-#impressum h1{ color:#d4a017; margin-bottom:20px; }
-#impressum p{ max-width:700px; margin-bottom:15px; }
-#impressum .close{ position:absolute; top:25px; right:35px; font-size:35px;
+#impressum h1,#privacy h1{ color:#d4a017; margin-bottom:20px; }
+#impressum p,#privacy p{ max-width:700px; margin-bottom:15px; }
+#impressum .close,#privacy .close{ position:absolute; top:25px; right:35px; font-size:35px;
                     cursor:pointer; color:#d4a017; }
 
 /* Scroll Animation Klassen */
 .visible{ opacity:1 !important; transform:translateY(0) !important; }
 
-/* Mobile */
+/* ======= Mobile Responsiveness ======= */
 @media(max-width:768px){
     h2{ font-size:28px; }
     .container{ padding:40px 20px; }
@@ -134,13 +134,7 @@ footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 <div id="about" class="container section">
 <h2>Über uns</h2>
 <div class="about-box">
-<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen. 
-Als kleines, leidenschaftliches Unternehmen fertigen wir personalisierte Produkte für Privatkunden und Unternehmen.</p>
-<p>Ob Geschenke, Dekorationen, Firmenartikel oder individuelle Einzelstücke – wir setzen Ideen mit moderner 
-Lasertechnik präzise um. Dabei legen wir besonderen Wert auf saubere Verarbeitung, hochwertige Materialien 
-und ein Ergebnis, das lange Freude bereitet.</p>
-<p>Jedes Projekt wird mit Sorgfalt und Liebe zum Detail umgesetzt. Unser Ziel ist es, einzigartige Produkte 
-zu schaffen, die Persönlichkeit zeigen und einen bleibenden Eindruck hinterlassen.</p>
+<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
 </div>
 </div>
 
@@ -164,7 +158,10 @@ zu schaffen, die Persönlichkeit zeigen und einen bleibenden Eindruck hinterlass
 </div>
 
 <footer>
-<p>© 2026 KRONSOHN | <a onclick="openImpressum()">Impressum</a></p>
+<p>© 2026 KRONSOHN | 
+<a onclick="openImpressum()">Impressum</a> | 
+<a onclick="openPrivacy()">Datenschutzerklärung</a>
+</p>
 </footer>
 
 </div>
@@ -185,7 +182,67 @@ E-Mail: info@kronsohn.com</p>
 Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.</p>
 </div>
 
+<!-- Datenschutzerklärung -->
+<div id="privacy">
+<span class="close" onclick="closePrivacy()">&times;</span>
+
+<h1>Datenschutzerklärung</h1>
+
+<p><strong>1. Verantwortlicher</strong></p>
+<p>
+Matthias Wurach<br>
+KRONSOHN<br>
+Auf der Rinne 2<br>
+37308 Heilbad Heiligenstadt<br>
+Deutschland<br><br>
+E-Mail: info@kronsohn.com
+</p>
+
+<p><strong>2. Allgemeine Hinweise</strong></p>
+<p>
+Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken. 
+Es werden keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.
+</p>
+
+<p><strong>3. Server-Logfiles</strong></p>
+<p>
+Der Hosting-Provider dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles,
+die Ihr Browser automatisch übermittelt.
+</p>
+
+<p>
+• Browsertyp und Browserversion<br>
+• verwendetes Betriebssystem<br>
+• Referrer URL<br>
+• Hostname des zugreifenden Rechners<br>
+• Uhrzeit der Serveranfrage<br>
+• IP-Adresse
+</p>
+
+<p>
+Diese Daten sind nicht bestimmten Personen zuordenbar und dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit der Website.
+</p>
+
+<p><strong>4. Cookies</strong></p>
+<p>
+Diese Website verwendet keine Cookies zur Analyse, zum Tracking oder zur Speicherung personenbezogener Daten.
+</p>
+
+<p><strong>5. Ihre Rechte</strong></p>
+<p>
+Sie haben jederzeit das Recht auf Auskunft über eventuell gespeicherte personenbezogene Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten. 
+Da auf dieser Website keine personenbezogenen Daten gespeichert werden, entfällt eine entsprechende Verarbeitung.
+</p>
+
+<p><strong>6. Änderungen dieser Datenschutzerklärung</strong></p>
+<p>
+Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.
+</p>
+
+</div>
+
 <script>
+
 function showSection(id){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
@@ -195,6 +252,9 @@ window.scrollTo(0,0);
 function openImpressum(){ document.getElementById("impressum").style.display="block"; }
 function closeImpressum(){ document.getElementById("impressum").style.display="none"; }
 
+function openPrivacy(){ document.getElementById("privacy").style.display="block"; }
+function closePrivacy(){ document.getElementById("privacy").style.display="none"; }
+
 const observer=new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -202,6 +262,7 @@ if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobse
 },{threshold:0.2});
 
 document.querySelectorAll('.service,.about-box').forEach(el=>{ observer.observe(el); });
+
 </script>
 
 </body>
