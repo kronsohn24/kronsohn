@@ -9,7 +9,7 @@
 
 /* Grundlegendes Styling */
 *{ box-sizing:border-box; margin:0; padding:0; }
-body{ font-family:'Segoe UI',Arial,sans-serif; color:white;
+body{ font-family:sans-serif; color:white;
        background-image:url("holz.jpg"); background-size:cover;
        background-position:center; background-attachment:fixed; }
 body::before{ content:""; position:fixed; top:0; left:0; width:100%; height:100%;
@@ -50,8 +50,7 @@ p{ line-height:1.7; margin-bottom:15px; }
             line-height:1.8; font-size:17px; box-shadow:0 10px 25px rgba(0,0,0,0.5);
             opacity:0; transform:translateY(20px); transition:0.6s ease-out; }
 .about-box.visible{ opacity:1; transform:translateY(0); }
-.about-box p{ margin-bottom:20px; }
-.about-box strong{ color:#d4a017; font-size:18px; }
+.about-box strong{ color:#d4a017; }
 
 /* Buttons */
 button{ background:#d4a017; border:none; padding:14px 28px; font-size:16px;
@@ -68,7 +67,7 @@ footer{ margin-top:auto; background:black; padding:25px; text-align:center;
          border-top:3px solid #d4a017; }
 footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 
-/* Impressum & Datenschutz Popups */
+/* Impressum & Datenschutz */
 #impressum,#privacy{ display:none; position:fixed; top:0; left:0; width:100%; height:100%;
             background:rgba(0,0,0,0.95); overflow:auto; padding:50px 20px; z-index:9999; }
 #impressum h1,#privacy h1{ color:#d4a017; margin-bottom:20px; }
@@ -76,27 +75,15 @@ footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 #impressum .close,#privacy .close{ position:absolute; top:25px; right:35px; font-size:35px;
                     cursor:pointer; color:#d4a017; }
 
-/* Scroll Animation Klassen */
-.visible{ opacity:1 !important; transform:translateY(0) !important; }
-
-/* ======= Mobile Responsiveness ======= */
+/* Mobile */
 @media(max-width:768px){
     h2{ font-size:28px; }
     .container{ padding:40px 20px; }
     nav{ flex-direction:column; gap:12px; }
     nav a{ font-size:15px; padding:10px 15px; }
-    .service-grid{ grid-template-columns:1fr; gap:20px; }
-    .about-box{ padding:25px; font-size:16px; }
-    button{ width:100%; text-align:center; padding:12px 0; font-size:16px; }
+    .service-grid{ grid-template-columns:1fr; }
 }
 
-@media(max-width:480px){
-    h2{ font-size:24px; }
-    .container{ padding:30px 15px; }
-    nav a{ font-size:14px; padding:10px 12px; }
-    .about-box{ padding:20px; font-size:15px; }
-    button{ font-size:15px; padding:10px 0; }
-}
 </style>
 </head>
 
@@ -133,8 +120,18 @@ footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 <!-- Über uns -->
 <div id="about" class="container section">
 <h2>Über uns</h2>
+
 <div class="about-box">
-<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
+
+<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen. 
+Mit viel Leidenschaft und Liebe zum Detail entstehen einzigartige Gravuren für Privatkunden und Unternehmen.</p>
+
+<p>Ob personalisierte Geschenke, Dekorationsartikel oder professionelle Firmenlösungen – jede Gravur wird mit moderner Lasertechnik präzise umgesetzt.</p>
+
+<p>Wir arbeiten mit verschiedenen Materialien wie Holz, Metall, Acryl und Glas und fertigen sowohl Einzelstücke als auch kleine Serien.</p>
+
+<p><strong>Qualität, Präzision und Individualität stehen bei uns an erster Stelle.</strong></p>
+
 </div>
 </div>
 
@@ -158,86 +155,11 @@ footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 </div>
 
 <footer>
-<p>© 2026 KRONSOHN | 
-<a onclick="openImpressum()">Impressum</a> | 
+<p>© 2026 KRONSOHN |
+<a onclick="openImpressum()">Impressum</a> |
 <a onclick="openPrivacy()">Datenschutzerklärung</a>
 </p>
 </footer>
-
-</div>
-
-<!-- Impressum -->
-<div id="impressum">
-<span class="close" onclick="closeImpressum()">&times;</span>
-<h1>Impressum</h1>
-<p><strong>Angaben gemäß § 5 TMG</strong></p>
-<p>Inhaber: Matthias Wurach<br>
-Auf der Rinne 2<br>
-37308 Heilbad Heiligenstadt<br>
-Deutschland</p>
-<p>Telefon: 03606 / 604299<br>
-Mobil: 015201990846<br>
-E-Mail: info@kronsohn.com</p>
-<p>Hinweis gemäß §19 UStG:<br>
-Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.</p>
-</div>
-
-<!-- Datenschutzerklärung -->
-<div id="privacy">
-<span class="close" onclick="closePrivacy()">&times;</span>
-
-<h1>Datenschutzerklärung</h1>
-
-<p><strong>1. Verantwortlicher</strong></p>
-<p>
-Matthias Wurach<br>
-KRONSOHN<br>
-Auf der Rinne 2<br>
-37308 Heilbad Heiligenstadt<br>
-Deutschland<br><br>
-E-Mail: info@kronsohn.com
-</p>
-
-<p><strong>2. Allgemeine Hinweise</strong></p>
-<p>
-Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken. 
-Es werden keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.
-</p>
-
-<p><strong>3. Server-Logfiles</strong></p>
-<p>
-Der Hosting-Provider dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles,
-die Ihr Browser automatisch übermittelt.
-</p>
-
-<p>
-• Browsertyp und Browserversion<br>
-• verwendetes Betriebssystem<br>
-• Referrer URL<br>
-• Hostname des zugreifenden Rechners<br>
-• Uhrzeit der Serveranfrage<br>
-• IP-Adresse
-</p>
-
-<p>
-Diese Daten sind nicht bestimmten Personen zuordenbar und dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit der Website.
-</p>
-
-<p><strong>4. Cookies</strong></p>
-<p>
-Diese Website verwendet keine Cookies zur Analyse, zum Tracking oder zur Speicherung personenbezogener Daten.
-</p>
-
-<p><strong>5. Ihre Rechte</strong></p>
-<p>
-Sie haben jederzeit das Recht auf Auskunft über eventuell gespeicherte personenbezogene Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten. 
-Da auf dieser Website keine personenbezogenen Daten gespeichert werden, entfällt eine entsprechende Verarbeitung.
-</p>
-
-<p><strong>6. Änderungen dieser Datenschutzerklärung</strong></p>
-<p>
-Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.
-</p>
 
 </div>
 
@@ -257,11 +179,16 @@ function closePrivacy(){ document.getElementById("privacy").style.display="none"
 
 const observer=new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
 });
 },{threshold:0.2});
 
-document.querySelectorAll('.service,.about-box').forEach(el=>{ observer.observe(el); });
+document.querySelectorAll('.service,.about-box').forEach(el=>{
+observer.observe(el);
+});
 
 </script>
 
