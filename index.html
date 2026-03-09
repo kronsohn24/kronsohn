@@ -7,81 +7,240 @@
 
 <style>
 
-/* Grundlegendes Styling */
 *{ box-sizing:border-box; margin:0; padding:0; }
-body{ font-family:sans-serif; color:white;
-       background-image:url("holz.jpg"); background-size:cover;
-       background-position:center; background-attachment:fixed; }
-body::before{ content:""; position:fixed; top:0; left:0; width:100%; height:100%;
-              background:rgba(255,255,255,0.15); z-index:0; }
 
-.overlay{ position:relative; background:rgba(0,0,0,0.65); min-height:100vh;
-          z-index:1; display:flex; flex-direction:column; }
+body{
+font-family:sans-serif;
+color:white;
+background-image:url("holz.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
 
-/* Header */
-header{ background:rgba(0,0,0,0.9); border-bottom:3px solid #d4a017;
-        padding:25px; text-align:center; backdrop-filter:blur(6px); }
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.15);
+z-index:0;
+}
+
+.overlay{
+position:relative;
+background:rgba(0,0,0,0.65);
+min-height:100vh;
+z-index:1;
+display:flex;
+flex-direction:column;
+}
+
+header{
+background:rgba(0,0,0,0.9);
+border-bottom:3px solid #d4a017;
+padding:25px;
+text-align:center;
+backdrop-filter:blur(6px);
+}
+
 header img{ max-height:80px; }
 
-/* Navigation */
-nav{ display:flex; justify-content:center; gap:20px; padding:18px;
-      background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); flex-wrap:wrap; }
-nav a{ color:#d4a017; text-decoration:none; font-weight:600; font-size:16px;
-       cursor:pointer; padding:10px 18px; border-radius:30px; transition:0.3s; }
-nav a:hover{ background:#d4a017; color:black; }
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:18px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+flex-wrap:wrap;
+}
 
-/* Container */
-.container{ max-width:1100px; margin:auto; padding:60px 25px; }
-h2{ font-size:32px; margin-bottom:25px; color:#d4a017; }
-p{ line-height:1.7; margin-bottom:15px; }
+nav a{
+color:#d4a017;
+text-decoration:none;
+font-weight:600;
+font-size:16px;
+cursor:pointer;
+padding:10px 18px;
+border-radius:30px;
+transition:0.3s;
+}
 
-/* Service Karten */
-.service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-               gap:25px; margin-top:30px; }
-.service{ background:rgba(20,20,20,0.9); padding:25px; border-radius:20px;
-         border:1px solid rgba(255,255,255,0.08); transition:0.3s;
-         opacity:0; transform:translateY(20px); transition:0.6s ease-out; }
-.service.visible{ opacity:1; transform:translateY(0); }
-.service h3{ color:#d4a017; margin-bottom:10px; }
+nav a:hover{
+background:#d4a017;
+color:black;
+}
 
-/* Über uns Box */
-.about-box{ background:rgba(20,20,20,0.9); padding:35px; border-radius:20px;
-            border:1px solid rgba(255,255,255,0.08); max-width:850px;
-            line-height:1.8; font-size:17px; box-shadow:0 10px 25px rgba(0,0,0,0.5);
-            opacity:0; transform:translateY(20px); transition:0.6s ease-out; }
-.about-box.visible{ opacity:1; transform:translateY(0); }
-.about-box strong{ color:#d4a017; }
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 25px;
+}
 
-/* Buttons */
-button{ background:#d4a017; border:none; padding:14px 28px; font-size:16px;
-         font-weight:600; border-radius:40px; cursor:pointer; transition:0.3s; }
-button:hover{ background:#f0c437; transform:translateY(-2px); }
+h2{
+font-size:32px;
+margin-bottom:25px;
+color:#d4a017;
+}
+
+p{
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* Services */
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.service{
+background:rgba(20,20,20,0.9);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+.service.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.service h3{
+color:#d4a017;
+margin-bottom:10px;
+}
+
+/* About */
+
+.about-box{
+background:rgba(20,20,20,0.9);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+max-width:850px;
+line-height:1.8;
+font-size:17px;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
+}
+
+.about-box.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.about-box strong{
+color:#d4a017;
+}
+
+/* Button */
+
+button{
+background:#d4a017;
+border:none;
+padding:14px 28px;
+font-size:16px;
+font-weight:600;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#f0c437;
+transform:translateY(-2px);
+}
 
 /* Sections */
-.section{ display:none; animation:fade 0.4s ease; }
+
+.section{ display:none; }
+
 .section.active{ display:block; }
-@keyframes fade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
 
 /* Footer */
-footer{ margin-top:auto; background:black; padding:25px; text-align:center;
-         border-top:3px solid #d4a017; }
-footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 
-/* Impressum & Datenschutz */
-#impressum,#privacy{ display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-            background:rgba(0,0,0,0.95); overflow:auto; padding:50px 20px; z-index:9999; }
-#impressum h1,#privacy h1{ color:#d4a017; margin-bottom:20px; }
-#impressum p,#privacy p{ max-width:700px; margin-bottom:15px; }
-#impressum .close,#privacy .close{ position:absolute; top:25px; right:35px; font-size:35px;
-                    cursor:pointer; color:#d4a017; }
+footer{
+margin-top:auto;
+background:black;
+padding:25px;
+text-align:center;
+border-top:3px solid #d4a017;
+}
+
+footer a{
+color:#d4a017;
+text-decoration:none;
+cursor:pointer;
+}
+
+/* Popup */
+
+#impressum,#privacy{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+overflow:auto;
+padding:50px 20px;
+z-index:9999;
+}
+
+#impressum h1,#privacy h1{
+color:#d4a017;
+margin-bottom:20px;
+}
+
+#impressum p,#privacy p{
+max-width:700px;
+margin-bottom:15px;
+}
+
+.close{
+position:absolute;
+top:25px;
+right:35px;
+font-size:35px;
+cursor:pointer;
+color:#d4a017;
+}
 
 /* Mobile */
+
 @media(max-width:768px){
-    h2{ font-size:28px; }
-    .container{ padding:40px 20px; }
-    nav{ flex-direction:column; gap:12px; }
-    nav a{ font-size:15px; padding:10px 15px; }
-    .service-grid{ grid-template-columns:1fr; }
+
+h2{ font-size:28px; }
+
+.container{ padding:40px 20px; }
+
+nav{
+flex-direction:column;
+gap:12px;
+}
+
+nav a{
+font-size:15px;
+padding:10px 15px;
+}
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -102,96 +261,217 @@ footer a{ color:#d4a017; text-decoration:none; cursor:pointer; }
 <a onclick="showSection('contact')">Kontakt</a>
 </nav>
 
-<!-- Start -->
+<!-- START -->
+
 <div id="start" class="container section active">
+
 <h2>Willkommen bei KRONSOHN</h2>
+
 <p>Professionelle Laser- und Gravurarbeiten für Privatkunden und Unternehmen. Präzise, hochwertig und individuell gefertigt.</p>
 
 <div class="service-grid">
-<div class="service"><h3>Individuelle Gravuren</h3><p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p></div>
-<div class="service"><h3>Firmenlösungen</h3><p>Logos, Werbematerialien und hochwertige Firmengeschenke.</p></div>
-<div class="service"><h3>Einzelanfertigungen</h3><p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p></div>
+
+<div class="service">
+<h3>Individuelle Gravuren</h3>
+<p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p>
+</div>
+
+<div class="service">
+<h3>Firmenlösungen</h3>
+<p>Logos, Werbematerialien und hochwertige Firmengeschenke.</p>
+</div>
+
+<div class="service">
+<h3>Einzelanfertigungen</h3>
+<p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p>
+</div>
+
 </div>
 
 <br><br>
+
 <button onclick="showSection('contact')">Kontakt aufnehmen</button>
+
 </div>
 
-<!-- Über uns -->
+<!-- ABOUT -->
+
 <div id="about" class="container section">
+
 <h2>Über uns</h2>
 
 <div class="about-box">
 
-<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen. 
-Mit viel Leidenschaft und Liebe zum Detail entstehen einzigartige Gravuren für Privatkunden und Unternehmen.</p>
+<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
 
-<p>Ob personalisierte Geschenke, Dekorationsartikel oder professionelle Firmenlösungen – jede Gravur wird mit moderner Lasertechnik präzise umgesetzt.</p>
+<p>Mit Leidenschaft und moderner Lasertechnik fertigen wir personalisierte Produkte für Privatkunden und Unternehmen.</p>
 
-<p>Wir arbeiten mit verschiedenen Materialien wie Holz, Metall, Acryl und Glas und fertigen sowohl Einzelstücke als auch kleine Serien.</p>
+<p>Ob Geschenke, Dekorationen oder Firmenartikel – jede Gravur wird mit höchster Genauigkeit umgesetzt.</p>
 
 <p><strong>Qualität, Präzision und Individualität stehen bei uns an erster Stelle.</strong></p>
 
 </div>
+
 </div>
 
-<!-- Dienstleistungen -->
+<!-- SERVICES -->
+
 <div id="services" class="container section">
+
 <h2>Unsere Dienstleistungen</h2>
+
 <div class="service-grid">
-<div class="service"><h3>Lasergravuren auf Holz</h3><p>Dekorationen, Geschenke oder Firmenartikel.</p></div>
-<div class="service"><h3>Metallgravuren</h3><p>Robuste Gravuren für Werkzeuge und Schilder.</p></div>
-<div class="service"><h3>Acryl & Glas</h3><p>Elegante Gravuren für Pokale und Dekoration.</p></div>
-<div class="service"><h3>Business Gravuren</h3><p>Firmenlogos und Werbeartikel.</p></div>
-</div>
+
+<div class="service">
+<h3>Lasergravuren auf Holz</h3>
+<p>Dekorationen, Geschenke oder Firmenartikel.</p>
 </div>
 
-<!-- Kontakt -->
+<div class="service">
+<h3>Metallgravuren</h3>
+<p>Robuste Gravuren für Werkzeuge und Schilder.</p>
+</div>
+
+<div class="service">
+<h3>Acryl & Glas</h3>
+<p>Elegante Gravuren für Pokale und Dekoration.</p>
+</div>
+
+<div class="service">
+<h3>Business Gravuren</h3>
+<p>Firmenlogos und Werbeartikel.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
 <div id="contact" class="container section">
+
 <h2>Kontakt</h2>
+
 <p><strong>E-Mail:</strong> info@kronsohn.com</p>
+
 <p><strong>Mobil:</strong> +49 015201990846</p>
+
 <p><strong>Telefon:</strong> 03606 / 604299</p>
+
 </div>
 
 <footer>
-<p>© 2026 KRONSOHN |
+
+<p>
+© 2026 KRONSOHN |
 <a onclick="openImpressum()">Impressum</a> |
 <a onclick="openPrivacy()">Datenschutzerklärung</a>
 </p>
+
 </footer>
+
+</div>
+
+<!-- IMPRESSUM -->
+
+<div id="impressum">
+
+<span class="close" onclick="closeImpressum()">&times;</span>
+
+<h1>Impressum</h1>
+
+<p><strong>Angaben gemäß § 5 TMG</strong></p>
+
+<p>
+Inhaber: Matthias Wurach<br>
+Auf der Rinne 2<br>
+37308 Heilbad Heiligenstadt<br>
+Deutschland
+</p>
+
+<p>
+Telefon: 03606 / 604299<br>
+Mobil: +49 015201990846<br>
+E-Mail: info@kronsohn.com
+</p>
+
+<p>
+Hinweis gemäß §19 UStG:<br>
+Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.
+</p>
+
+</div>
+
+<!-- PRIVACY -->
+
+<div id="privacy">
+
+<span class="close" onclick="closePrivacy()">&times;</span>
+
+<h1>Datenschutzerklärung</h1>
+
+<p><strong>Verantwortlicher</strong></p>
+
+<p>
+Matthias Wurach<br>
+KRONSOHN<br>
+Auf der Rinne 2<br>
+37308 Heilbad Heiligenstadt
+</p>
+
+<p>
+E-Mail: info@kronsohn.com
+</p>
+
+<p>
+Diese Website dient ausschließlich zu Informationszwecken. Es werden keine personenbezogenen Daten aktiv gespeichert oder verarbeitet.
+</p>
 
 </div>
 
 <script>
 
 function showSection(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-window.scrollTo(0,0);
+
+document.querySelectorAll('.section').forEach(s=>{
+s.classList.remove('active')
+})
+
+document.getElementById(id).classList.add('active')
+
+window.scrollTo(0,0)
+
 }
 
-function openImpressum(){ document.getElementById("impressum").style.display="block"; }
-function closeImpressum(){ document.getElementById("impressum").style.display="none"; }
+function openImpressum(){
+document.getElementById("impressum").style.display="block"
+}
 
-function openPrivacy(){ document.getElementById("privacy").style.display="block"; }
-function closePrivacy(){ document.getElementById("privacy").style.display="none"; }
+function closeImpressum(){
+document.getElementById("impressum").style.display="none"
+}
 
-const observer=new IntersectionObserver((entries)=>{
+function openPrivacy(){
+document.getElementById("privacy").style.display="block"
+}
+
+function closePrivacy(){
+document.getElementById("privacy").style.display="none"
+}
+
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
+entry.target.classList.add("visible")
 }
-});
-},{threshold:0.2});
+})
+})
 
-document.querySelectorAll('.service,.about-box').forEach(el=>{
-observer.observe(el);
-});
+document.querySelectorAll(".service,.about-box").forEach(el=>{
+observer.observe(el)
+})
 
 </script>
 
 </body>
 </html>
-
