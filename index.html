@@ -9,207 +9,64 @@
 
 /* Grundlegendes Styling */
 *{ box-sizing:border-box; margin:0; padding:0; }
+body{ font-family:'Segoe UI',Arial,sans-serif; color:white;
+       background-image:url("holz.jpg"); background-size:cover;
+       background-position:center; background-attachment:fixed; }
+body::before{ content:""; position:fixed; top:0; left:0; width:100%; height:100%;
+              background:rgba(255,255,255,0.15); z-index:0; }
 
-body{
-font-family:'Segoe UI',Arial,sans-serif;
-color:white;
-background-image:url("holz.jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(255,255,255,0.15);
-z-index:0;
-}
-
-.overlay{
-position:relative;
-background:rgba(0,0,0,0.65);
-min-height:100vh;
-z-index:1;
-display:flex;
-flex-direction:column;
-}
+.overlay{ position:relative; background:rgba(0,0,0,0.65); min-height:100vh;
+          z-index:1; display:flex; flex-direction:column; }
 
 /* Header */
-
-header{
-background:rgba(0,0,0,0.9);
-border-bottom:3px solid #d4a017;
-padding:25px;
-text-align:center;
-backdrop-filter:blur(6px);
-}
-
-header img{
-max-height:80px;
-}
+header{ background:rgba(0,0,0,0.9); border-bottom:3px solid #d4a017;
+        padding:25px; text-align:center; backdrop-filter:blur(6px); }
+header img{ max-height:80px; }
 
 /* Navigation */
-
-nav{
-display:flex;
-justify-content:center;
-gap:20px;
-padding:18px;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(8px);
-flex-wrap:wrap;
-}
-
-nav a{
-color:#d4a017;
-text-decoration:none;
-font-weight:600;
-font-size:16px;
-cursor:pointer;
-padding:10px 18px;
-border-radius:30px;
-transition:0.3s;
-}
-
-nav a:hover{
-background:#d4a017;
-color:black;
-}
+nav{ display:flex; justify-content:center; gap:20px; padding:18px;
+      background:rgba(0,0,0,0.7); backdrop-filter:blur(8px); flex-wrap:wrap; }
+nav a{ color:#d4a017; text-decoration:none; font-weight:600; font-size:16px;
+       cursor:pointer; padding:10px 18px; border-radius:30px; transition:0.3s; }
+nav a:hover{ background:#d4a017; color:black; }
 
 /* Container */
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:60px 25px;
-}
-
-h2{
-font-size:32px;
-margin-bottom:25px;
-color:#d4a017;
-}
-
-p{
-line-height:1.7;
-margin-bottom:15px;
-}
+.container{ max-width:1100px; margin:auto; padding:60px 25px; }
+h2{ font-size:32px; margin-bottom:25px; color:#d4a017; }
+p{ line-height:1.7; margin-bottom:15px; }
 
 /* Service Karten */
+.service-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+               gap:25px; margin-top:30px; }
+.service{ background:rgba(20,20,20,0.9); padding:25px; border-radius:20px;
+         border:1px solid rgba(255,255,255,0.08); transition:0.3s;
+         opacity:0; transform:translateY(20px); transition:0.6s ease-out; }
+.service.visible{ opacity:1; transform:translateY(0); }
+.service h3{ color:#d4a017; margin-bottom:10px; }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:30px;
-}
-
-.service{
-background:rgba(20,20,20,0.9);
-padding:25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-transition:0.3s;
-opacity:0;
-transform:translateY(20px);
-transition:0.6s ease-out;
-}
-
-.service.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-.service h3{
-color:#d4a017;
-margin-bottom:10px;
-}
-
-/* Über uns */
-
-.about-box{
-background:rgba(20,20,20,0.9);
-padding:35px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.08);
-max-width:850px;
-line-height:1.8;
-font-size:17px;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
-opacity:0;
-transform:translateY(20px);
-transition:0.6s ease-out;
-}
-
-.about-box.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-.about-box strong{
-color:#d4a017;
-font-size:18px;
-}
+/* Über uns Box */
+.about-box{ background:rgba(20,20,20,0.9); padding:35px; border-radius:20px;
+            border:1px solid rgba(255,255,255,0.08); max-width:850px;
+            line-height:1.8; font-size:17px; box-shadow:0 10px 25px rgba(0,0,0,0.5);
+            opacity:0; transform:translateY(20px); transition:0.6s ease-out; }
+.about-box.visible{ opacity:1; transform:translateY(0); }
 
 /* Buttons */
-
-button{
-background:#d4a017;
-border:none;
-padding:14px 28px;
-font-size:16px;
-font-weight:600;
-border-radius:40px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#f0c437;
-transform:translateY(-2px);
-}
+button{ background:#d4a017; border:none; padding:14px 28px; font-size:16px;
+         font-weight:600; border-radius:40px; cursor:pointer; transition:0.3s; }
+button:hover{ background:#f0c437; transform:translateY(-2px); }
 
 /* Sections */
-
-.section{
-display:none;
-animation:fade 0.4s ease;
-}
-
-.section.active{
-display:block;
-}
-
-@keyframes fade{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
-}
+.section{ display:none; animation:fade 0.4s ease; }
+.section.active{ display:block; }
 
 /* Footer */
-
-footer{
-margin-top:auto;
-background:black;
-padding:25px;
-text-align:center;
-border-top:3px solid #d4a017;
-}
-
-footer a{
-color:#d4a017;
-text-decoration:none;
-cursor:pointer;
-margin:0 10px;
-}
+footer{ margin-top:auto; background:black; padding:25px; text-align:center;
+         border-top:3px solid #d4a017; }
+footer a{ color:#d4a017; text-decoration:none; cursor:pointer; margin:0 10px; }
 
 /* Impressum & Datenschutz */
-
-#impressum,#datenschutz{
+#impressum, #datenschutz{
 display:none;
 position:fixed;
 top:0;
@@ -222,22 +79,7 @@ padding:50px 20px;
 z-index:9999;
 }
 
-#impressum h1,#datenschutz h1{
-color:#d4a017;
-margin-bottom:20px;
-}
-
-#datenschutz h3{
-color:#d4a017;
-margin-top:25px;
-margin-bottom:10px;
-}
-
-#datenschutz ul{
-margin-left:20px;
-margin-bottom:20px;
-line-height:1.6;
-}
+#impressum h1, #datenschutz h1{ color:#d4a017; margin-bottom:20px; }
 
 .close{
 position:absolute;
@@ -267,156 +109,78 @@ color:#d4a017;
 </nav>
 
 <!-- Start -->
-
 <div id="start" class="container section active">
-
 <h2>Willkommen bei KRONSOHN</h2>
-
-<p>
-Professionelle Laser- und Gravurarbeiten für Privatkunden und Unternehmen.
-Präzise, hochwertig und individuell gefertigt.
-</p>
-
-<div class="service-grid">
-
-<div class="service">
-<h3>Individuelle Gravuren</h3>
-<p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p>
-</div>
-
-<div class="service">
-<h3>Firmenlösungen</h3>
-<p>Logos, Werbematerialien und hochwertige Firmengeschenke.</p>
-</div>
-
-<div class="service">
-<h3>Einzelanfertigungen</h3>
-<p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p>
-</div>
-
-</div>
-
-<br><br>
-
-<button onclick="showSection('contact')">Kontakt aufnehmen</button>
-
-</div>
-
-<!-- Über uns -->
-
-<div id="about" class="container section">
-
-<h2>Über uns</h2>
-
-<div class="about-box">
-
-<p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
-
-<p>
-Ob Geschenke, Dekorationen, Firmenartikel oder individuelle Einzelstücke –
-wir setzen Ideen mit moderner Lasertechnik präzise um.
-</p>
-
-<p>
-Unser Ziel ist es, einzigartige Produkte zu schaffen,
-die Persönlichkeit zeigen und einen bleibenden Eindruck hinterlassen.
-</p>
-
-</div>
-
-</div>
-
-<!-- Dienstleistungen -->
-
-<div id="services" class="container section">
-
-<h2>Unsere Dienstleistungen</h2>
-
-<div class="service-grid">
-
-<div class="service">
-<h3>Lasergravuren auf Holz</h3>
-<p>Dekorationen, Geschenke oder Firmenartikel.</p>
-</div>
-
-<div class="service">
-<h3>Metallgravuren</h3>
-<p>Robuste Gravuren für Werkzeuge und Schilder.</p>
-</div>
-
-<div class="service">
-<h3>Acryl & Glas</h3>
-<p>Elegante Gravuren für Pokale und Dekoration.</p>
-</div>
-
-<div class="service">
-<h3>Business Gravuren</h3>
-<p>Firmenlogos und Werbeartikel.</p>
-</div>
-
-</div>
-
+<p>Professionelle Laser- und Gravurarbeiten für Privatkunden und Unternehmen.</p>
 </div>
 
 <!-- Kontakt -->
-
 <div id="contact" class="container section">
-
 <h2>Kontakt</h2>
-
 <p><strong>E-Mail:</strong> info@kronsohn.com</p>
 <p><strong>Mobil:</strong> +49 015201990846</p>
 <p><strong>Telefon:</strong> 03606 / 604299</p>
-
 </div>
 
 <footer>
-
-<p>
-© 2026 KRONSOHN |
-<a onclick="openImpressum()">Impressum</a> |
+<p>© 2026 KRONSOHN | 
+<a onclick="openImpressum()">Impressum</a> | 
 <a onclick="openDatenschutz()">Datenschutzerklärung</a>
 </p>
-
 </footer>
 
 </div>
 
 <!-- Impressum -->
-
 <div id="impressum">
-
 <span class="close" onclick="closeImpressum()">&times;</span>
-
 <h1>Impressum</h1>
-
 <p><strong>Angaben gemäß § 5 TMG</strong></p>
-
 <p>
-Inhaber: Matthias Wurach<br>
+Matthias Wurach<br>
 Auf der Rinne 2<br>
 37308 Heilbad Heiligenstadt
 </p>
-
 </div>
 
-<!-- Datenschutzerklärung -->
-
+<!-- Datenschutz -->
 <div id="datenschutz">
-
 <span class="close" onclick="closeDatenschutz()">&times;</span>
-
 <h1>Datenschutzerklärung</h1>
 
-<h3>1. Allgemeine Hinweise</h3>
-<p>Der Schutz Ihrer persönlichen Daten ist uns wichtig...</p>
+<p><strong>1. Allgemeine Hinweise</strong></p>
+<p>
+Der Schutz Ihrer persönlichen Daten ist uns wichtig. 
+Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend 
+der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+</p>
 
-<h3>2. Verantwortlicher</h3>
+<p><strong>2. Verantwortliche Stelle</strong></p>
 <p>
 Matthias Wurach<br>
-KRONSOHN<br>
 Auf der Rinne 2<br>
-37308 Heilbad Heiligenstadt
+37308 Heilbad Heiligenstadt<br>
+E-Mail: info@kronsohn.com
+</p>
+
+<p><strong>3. Datenerfassung auf dieser Website</strong></p>
+<p>
+Beim Besuch dieser Website können automatisch Informationen 
+(z.B. Browser, Betriebssystem oder Uhrzeit des Seitenaufrufs) 
+durch den Server erfasst werden. Diese Daten dienen ausschließlich 
+der technischen Bereitstellung der Website.
+</p>
+
+<p><strong>4. Kontaktaufnahme</strong></p>
+<p>
+Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben 
+zur Bearbeitung der Anfrage gespeichert.
+</p>
+
+<p><strong>5. Ihre Rechte</strong></p>
+<p>
+Sie haben jederzeit das Recht auf Auskunft, Berichtigung oder Löschung 
+Ihrer gespeicherten personenbezogenen Daten.
 </p>
 
 </div>
