@@ -7,317 +7,317 @@
 <link rel="icon" type="image/png" href="B-Icon.png">
 
 <style>
+
 *{ box-sizing:border-box; margin:0; padding:0; }
 
 body{
-  font-family:sans-serif;
-  color:white;
-  background-image:url("holz.jpg");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+font-family:sans-serif;
+color:white;
+background-image:url("holz.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
 body::before{
-  content:"";
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(255,255,255,0.15);
-  z-index:0;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.15);
+z-index:0;
 }
 
 .overlay{
-  position:relative;
-  background:rgba(0,0,0,0.65);
-  min-height:100vh;
-  z-index:1;
-  display:flex;
-  flex-direction:column;
+position:relative;
+background:rgba(0,0,0,0.65);
+min-height:100vh;
+z-index:1;
+display:flex;
+flex-direction:column;
 }
 
 header{
-  background:rgba(0,0,0,0.9);
-  border-bottom:3px solid #d4a017;
-  padding:25px;
-  text-align:center;
-  backdrop-filter:blur(6px);
+background:rgba(0,0,0,0.9);
+border-bottom:3px solid #d4a017;
+padding:25px;
+text-align:center;
+backdrop-filter:blur(6px);
 }
 
-header img{ max-height:80px; }
+header img{ 
+  max-height:80px; 
+  cursor:pointer;
+}
 
 nav{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:18px;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(8px);
-  flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:18px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+flex-wrap:wrap;
 }
 
 nav a{
-  color:#d4a017;
-  text-decoration:none;
-  font-weight:600;
-  font-size:16px;
-  cursor:pointer;
-  padding:10px 18px;
-  border-radius:30px;
-  transition:0.3s;
+color:#d4a017;
+text-decoration:none;
+font-weight:600;
+font-size:16px;
+cursor:pointer;
+padding:10px 18px;
+border-radius:30px;
+transition:0.3s;
 }
 
 nav a:hover{
-  background:#d4a017;
-  color:black;
+background:#d4a017;
+color:black;
 }
 
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:60px 25px;
+max-width:1100px;
+margin:auto;
+padding:60px 25px;
 }
 
 h2{
-  font-size:32px;
-  margin-bottom:25px;
-  color:#d4a017;
+font-size:32px;
+margin-bottom:25px;
+color:#d4a017;
 }
 
 p{
-  line-height:1.7;
-  margin-bottom:15px;
+line-height:1.7;
+margin-bottom:15px;
 }
 
 /* Services */
+
 .service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
 }
 
 .service{
-  background:rgba(20,20,20,0.9);
-  padding:25px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.6s;
+background:rgba(20,20,20,0.9);
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
 }
 
 .service.visible{
-  opacity:1;
-  transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .service h3{
-  color:#d4a017;
-  margin-bottom:10px;
+color:#d4a017;
+margin-bottom:10px;
 }
 
 /* About */
+
 .about-box{
-  background:rgba(20,20,20,0.9);
-  padding:35px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  max-width:850px;
-  line-height:1.8;
-  font-size:17px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.5);
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.6s;
+background:rgba(20,20,20,0.9);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+max-width:850px;
+line-height:1.8;
+font-size:17px;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+opacity:0;
+transform:translateY(20px);
+transition:0.6s;
 }
 
 .about-box.visible{
-  opacity:1;
-  transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .about-box strong{
-  color:#d4a017;
+color:#d4a017;
 }
 
 /* Button */
+
 button{
-  background:#d4a017;
-  border:none;
-  padding:14px 28px;
-  font-size:16px;
-  font-weight:600;
-  border-radius:40px;
-  cursor:pointer;
-  transition:0.3s;
+background:#d4a017;
+border:none;
+padding:14px 28px;
+font-size:16px;
+font-weight:600;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-  background:#f0c437;
-  transform:translateY(-2px);
+background:#f0c437;
+transform:translateY(-2px);
 }
 
 /* Sections */
+
 .section{ display:none; }
+
 .section.active{ display:block; }
 
 /* Footer */
+
 footer{
-  margin-top:auto;
-  background:black;
-  padding:25px;
-  text-align:center;
-  border-top:3px solid #d4a017;
+margin-top:auto;
+background:black;
+padding:25px;
+text-align:center;
+border-top:3px solid #d4a017;
 }
 
 footer a{
-  color:#d4a017;
-  text-decoration:none;
-  cursor:pointer;
+color:#d4a017;
+text-decoration:none;
+cursor:pointer;
 }
 
 /* Popup */
+
 #impressum,#privacy{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.95);
-  overflow:auto;
-  padding:50px 20px;
-  z-index:9999;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+overflow:auto;
+padding:50px 20px;
+z-index:9999;
 }
 
 #impressum h1,#privacy h1{
-  color:#d4a017;
-  margin-bottom:25px;
+color:#d4a017;
+margin-bottom:25px;
 }
 
 #impressum h2,#privacy h2{
-  color:#d4a017;
-  margin-top:30px;
-  margin-bottom:10px;
-  font-size:20px;
+color:#d4a017;
+margin-top:30px;
+margin-bottom:10px;
+font-size:20px;
 }
 
 #impressum p,#privacy p{
-  max-width:700px;
-  margin-bottom:15px;
+max-width:700px;
+margin-bottom:15px;
 }
 
 #privacy ul{
-  max-width:700px;
-  margin-left:20px;
-  margin-bottom:20px;
-  line-height:1.7;
+max-width:700px;
+margin-left:20px;
+margin-bottom:20px;
+line-height:1.7;
+}
+
+input, select, textarea{
+width:100%;
+padding:12px 15px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid rgba(212,160,23,0.6);
+background:rgba(0,0,0,0.6);
+color:white;
+font-size:16px;
+}
+
+input:focus, select:focus, textarea:focus{
+outline:none;
+border:1px solid #f0c437;
+}
+
+textarea{
+resize:vertical;
 }
 
 .close{
-  position:absolute;
-  top:25px;
-  right:35px;
-  font-size:35px;
-  cursor:pointer;
-  color:#d4a017;
-}
-
-/* Form Styles */
-form{
-  background:rgba(20,20,20,0.9);
-  padding:25px;
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  max-width:700px;
-  margin-top:20px;
-}
-
-form input, form select, form textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:15px;
-  border-radius:10px;
-  border:none;
-  font-size:15px;
-  font-weight:500;
-  background:rgba(255,255,255,0.05);
-  color:white;
-}
-
-form input::placeholder, form textarea::placeholder{
-  color:rgba(255,255,255,0.7);
-}
-
-form button{
-  width:100%;
+position:absolute;
+top:25px;
+right:35px;
+font-size:35px;
+cursor:pointer;
+color:#d4a017;
 }
 
 /* Mobile */
+
 @media(max-width:768px){
-  h2{ font-size:28px; }
-  .container{ padding:40px 20px; }
-  nav{
-    flex-direction:column;
-    gap:12px;
-  }
-  nav a{
-    font-size:15px;
-    padding:10px 15px;
-  }
-  .service-grid{
-    grid-template-columns:1fr;
-  }
+
+h2{ font-size:28px; }
+
+.container{ padding:40px 20px; }
+
+nav{
+flex-direction:column;
+gap:12px;
 }
 
-/* Live WhatsApp Button */
-#live-whatsapp-container{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  text-align:center;
-  z-index:9999;
+nav a{
+font-size:15px;
+padding:10px 15px;
 }
 
-#live-whatsapp-text{
-  color:white;
-  font-weight:600;
-  margin-bottom:5px;
-  line-height:1.2;
-  text-shadow:0 1px 3px rgba(0,0,0,0.5);
+.service-grid{
+grid-template-columns:1fr;
 }
 
-#live-whatsapp{
-  background:#25D366;
-  color:white;
-  border:none;
-  border-radius:50px;
-  width:60px;
-  height:60px;
-  font-size:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
-  transition:0.3s;
 }
 
-#live-whatsapp:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+/* WhatsApp Floating Button */
+
+#whatsapp-button{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:12px 15px;
+border-radius:50px;
+font-weight:600;
+font-size:16px;
+display:flex;
+align-items:center;
+gap:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+cursor:pointer;
+z-index:9999;
 }
+
+#whatsapp-button span{
+display:flex;
+flex-direction:column;
+font-size:12px;
+line-height:12px;
+font-weight:500;
+}
+
 </style>
 </head>
 
 <body>
+
 <div class="overlay">
 
 <header>
-<img src="logo.png" alt="KRONSOHN Logo">
+<img src="logo.png" alt="KRONSOHN Logo" onclick="showSection('start')">
 </header>
 
 <nav>
@@ -328,125 +328,188 @@ form button{
 </nav>
 
 <div id="start" class="container section active">
+
 <h2>Willkommen bei KRONSOHN</h2>
+
 <p>Professionelle Laser- und Gravurarbeiten für Privatkunden und Unternehmen. Präzise, hochwertig und individuell gefertigt.</p>
 
 <div class="service-grid">
+
 <div class="service">
 <h3>Individuelle Gravuren</h3>
 <p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p>
 </div>
+
 <div class="service">
 <h3>Firmenlösungen</h3>
 <p>Logos, Werbematerialien und hochwertige Firmengeschenke.</p>
 </div>
+
 <div class="service">
 <h3>Einzelanfertigungen</h3>
 <p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p>
 </div>
+
 </div>
 
 <br><br>
+
 <button onclick="showSection('contact')">Kontakt aufnehmen</button>
+
 </div>
 
 <div id="about" class="container section">
+
 <h2>Über uns</h2>
+
 <div class="about-box">
+
 <p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
+
 <p>Mit Leidenschaft und moderner Lasertechnik fertigen wir personalisierte Produkte für Privatkunden und Unternehmen.</p>
+
 <p>Ob Geschenke, Dekorationen oder Firmenartikel – jede Gravur wird mit höchster Genauigkeit umgesetzt.</p>
+
 <p><strong>Qualität, Präzision und Individualität stehen bei uns an erster Stelle.</strong></p>
+
 </div>
+
 </div>
 
 <div id="services" class="container section">
+
 <h2>Unsere Dienstleistungen</h2>
+
 <div class="service-grid">
+
 <div class="service">
 <h3>Lasergravuren auf Holz</h3>
 <p>Dekorationen, Geschenke oder Firmenartikel.</p>
 </div>
+
 <div class="service">
 <h3>Metallgravuren</h3>
 <p>Robuste Gravuren für Werkzeuge und Schilder.</p>
 </div>
+
 <div class="service">
 <h3>Acryl & Glas</h3>
 <p>Elegante Gravuren für Pokale und Dekoration.</p>
 </div>
+
 <div class="service">
 <h3>Business Gravuren</h3>
 <p>Firmenlogos und Werbeartikel.</p>
 </div>
+
 </div>
+
 </div>
 
 <div id="contact" class="container section">
+
 <h2>Kontakt</h2>
+
 <p><strong>E-Mail:</strong> info@kronsohn.com</p>
 <p><strong>Mobil:</strong> +49 15201990846</p>
 <p><strong>Telefon:</strong> +49 3606 / 604299</p>
 
 <h2>Anfrageformular</h2>
+
 <form action="https://formspree.io/f/xaqpopyg" method="POST">
-<input type="text" name="name" placeholder="Vorname, Nachname" required>
-<input type="email" name="email" placeholder="E-Mail" required>
-<input type="tel" name="telefon" placeholder="Telefon (optional)">
-<textarea name="beschreibung" placeholder="Beschreibung der Gravur" rows="4" required></textarea>
-<select name="material" required>
-<option value="">Material wählen</option>
-<option>Holz</option>
-<option>Metall</option>
-<option>Glas</option>
-<option>Acryl</option>
-<option>Kunststoff</option>
-<option>Keramik</option>
+
+<input type="text" name="Vorname" placeholder="Vorname" required>
+<input type="text" name="Nachname" placeholder="Nachname" required>
+<input type="email" name="Email" placeholder="E-Mail" required>
+<input type="tel" name="Telefon" placeholder="Telefon (optional)">
+
+<textarea name="Beschreibung" placeholder="Beschreibung der Gravur" required></textarea>
+
+<select name="Material" required>
+<option value="">Material auswählen</option>
+<option value="Holz">Holz</option>
+<option value="Metall">Metall</option>
+<option value="Glas">Glas</option>
+<option value="Acryl">Acryl</option>
+<option value="Kunststoff">Kunststoff</option>
+<option value="Stein">Stein</option>
 </select>
+
 <button type="submit">Anfrage senden</button>
 </form>
+
 </div>
 
 <footer>
+
 <p>
 © 2026 KRONSOHN |
 <a onclick="openImpressum()">Impressum</a> |
 <a onclick="openPrivacy()">Datenschutzerklärung</a>
 </p>
-<button onclick="window.open('https://whatsapp.com/channel/0029Vb4BuBD1SWsrbJziUU0w','_blank')">
-WhatsApp Kanal
-</button>
+
 </footer>
 
-<!-- Live WhatsApp Button -->
-<div id="live-whatsapp-container">
-<div id="live-whatsapp-text">Direkt zu<br>WhatsApp</div>
-<button id="live-whatsapp" onclick="window.open('https://wa.me/4915201990846','_blank')">💬</button>
-</div>
-
-<!-- Impressum & Datenschutz -->
 <div id="impressum">
+
 <span class="close" onclick="closeImpressum()">&times;</span>
+
 <h1>Impressum</h1>
+
 <h2>Angaben gemäß § 5 TMG</h2>
-<p><strong>Inhaber</strong><br>Matthias Wurach<br>KRONSOHN</p>
-<p><strong>Adresse</strong><br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
+
+<p>
+<strong>Inhaber</strong><br>
+Matthias Wurach<br>
+KRONSOHN
+</p>
+
+<p>
+<strong>Adresse</strong><br>
+Auf der Rinne 2<br>
+37308 Heilbad Heiligenstadt<br>
+Deutschland
+</p>
+
 <h2>Kontakt</h2>
-<p>Telefon: +49 3606 / 604299<br>Mobil: +49 15201990846<br>E-Mail: info@kronsohn.com</p>
+
+<p>
+Telefon: +49 3606 / 604299<br>
+Mobil: +49 15201990846<br>
+E-Mail: info@kronsohn.com
+</p>
+
 <h2>Umsatzsteuer</h2>
-<p>Hinweis gemäß §19 UStG:<br>Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.</p>
+
+<p>
+Hinweis gemäß §19 UStG:<br>
+Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.
+</p>
+
 </div>
 
 <div id="privacy">
+
 <span class="close" onclick="closePrivacy()">&times;</span>
+
 <h1>Datenschutzerklärung</h1>
+
 <h2>1. Verantwortlicher</h2>
-<p>Matthias Wurach<br>KRONSOHN<br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
+<p>
+Matthias Wurach<br>
+KRONSOHN<br>
+Auf der Rinne 2<br>
+37308 Heilbad Heiligenstadt<br>
+Deutschland
+</p>
 <p>E-Mail: info@kronsohn.com</p>
+
 <h2>2. Allgemeine Hinweise</h2>
 <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken. Es werden keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.</p>
+
 <h2>3. Server-Logfiles</h2>
 <p>Der Hosting-Provider dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. Dazu gehören:</p>
+
 <ul>
 <li>Browsertyp und Browserversion</li>
 <li>verwendetes Betriebssystem</li>
@@ -455,34 +518,67 @@ WhatsApp Kanal
 <li>Uhrzeit der Serveranfrage</li>
 <li>IP-Adresse</li>
 </ul>
+
 <p>Diese Daten sind nicht bestimmten Personen zuordenbar und dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit der Website.</p>
+
 <h2>4. Cookies</h2>
 <p>Diese Website verwendet keine Cookies zur Analyse, zum Tracking oder zur Speicherung personenbezogener Daten.</p>
+
 <h2>5. Ihre Rechte</h2>
 <p>Sie haben jederzeit das Recht auf Auskunft über eventuell gespeicherte personenbezogene Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten. Da auf dieser Website keine personenbezogenen Daten gespeichert werden, entfällt eine entsprechende Verarbeitung.</p>
+
 <h2>6. Änderungen dieser Datenschutzerklärung</h2>
 <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.</p>
+
+</div>
+
+<div id="whatsapp-button" onclick="window.open('https://wa.me/4915201990846','_blank')">
+<span>Direkt zu<br>WhatsApp</span>💬
 </div>
 
 <script>
+
 function showSection(id){
-  document.querySelectorAll('.section').forEach(s=>{s.classList.remove('active')})
-  document.getElementById(id).classList.add('active')
-  window.scrollTo(0,0)
-}
 
-function openImpressum(){ document.getElementById("impressum").style.display="block" }
-function closeImpressum(){ document.getElementById("impressum").style.display="none" }
-function openPrivacy(){ document.getElementById("privacy").style.display="block" }
-function closePrivacy(){ document.getElementById("privacy").style.display="none" }
-
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){ entry.target.classList.add("visible") }
-  })
+document.querySelectorAll('.section').forEach(s=>{
+s.classList.remove('active')
 })
 
-document.querySelectorAll(".service,.about-box").forEach(el=>{ observer.observe(el) })
+document.getElementById(id).classList.add('active')
+
+window.scrollTo(0,0)
+
+}
+
+function openImpressum(){
+document.getElementById("impressum").style.display="block"
+}
+
+function closeImpressum(){
+document.getElementById("impressum").style.display="none"
+}
+
+function openPrivacy(){
+document.getElementById("privacy").style.display="block"
+}
+
+function closePrivacy(){
+document.getElementById("privacy").style.display="none"
+}
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible")
+}
+})
+})
+
+document.querySelectorAll(".service,.about-box").forEach(el=>{
+observer.observe(el)
+})
+
 </script>
+
 </body>
 </html>
