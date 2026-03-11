@@ -360,10 +360,54 @@ grid-template-columns:1fr;
 <h2>Kontakt</h2>
 
 <p><strong>E-Mail:</strong> info@kronsohn.com</p>
-
 <p><strong>Mobil:</strong> +49 15201990846</p>
-
 <p><strong>Telefon:</strong> +49 3606 / 604299</p>
+
+<br><br>
+
+<h2>Anfrageformular</h2>
+
+<form>
+
+<p>
+<label>Name</label><br>
+<input type="text" name="name" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+</p>
+
+<p>
+<label>E-Mail</label><br>
+<input type="email" name="email" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+</p>
+
+<p>
+<label>Telefon (optional)</label><br>
+<input type="tel" name="telefon" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+</p>
+
+<p>
+<label>Material</label><br>
+<select name="material" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+<option>Holz</option>
+<option>Metall</option>
+<option>Glas</option>
+</select>
+</p>
+
+<p>
+<label>Beschreibung der Gravur</label><br>
+<textarea name="beschreibung" rows="5" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;"></textarea>
+</p>
+
+<p>
+<label>Datei hochladen (Logo / Bild)</label><br>
+<input type="file" name="datei" style="margin-top:5px;">
+</p>
+
+<br>
+
+<button type="submit">Anfrage senden</button>
+
+</form>
 
 </div>
 
@@ -380,8 +424,6 @@ WhatsApp Kanal
 </button>
 
 </footer>
-
-</div>
 
 <div id="impressum">
 
