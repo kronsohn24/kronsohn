@@ -272,6 +272,32 @@ form button{
     grid-template-columns:1fr;
   }
 }
+
+/* Live WhatsApp Button */
+#live-whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  border:none;
+  border-radius:50px;
+  width:60px;
+  height:60px;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:9999;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+#live-whatsapp:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
 </style>
 </head>
 
@@ -351,7 +377,6 @@ form button{
 
 <div id="contact" class="container section">
 <h2>Kontakt</h2>
-
 <p><strong>E-Mail:</strong> info@kronsohn.com</p>
 <p><strong>Mobil:</strong> +49 15201990846</p>
 <p><strong>Telefon:</strong> +49 3606 / 604299</p>
@@ -388,19 +413,19 @@ WhatsApp Kanal
 </button>
 </footer>
 
+<!-- Live WhatsApp Button -->
+<button id="live-whatsapp" onclick="window.open('https://wa.me/4915201990846','_blank')">💬</button>
+
 </div>
 
 <div id="impressum">
 <span class="close" onclick="closeImpressum()">&times;</span>
 <h1>Impressum</h1>
-
 <h2>Angaben gemäß § 5 TMG</h2>
 <p><strong>Inhaber</strong><br>Matthias Wurach<br>KRONSOHN</p>
 <p><strong>Adresse</strong><br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
-
 <h2>Kontakt</h2>
 <p>Telefon: +49 3606 / 604299<br>Mobil: +49 15201990846<br>E-Mail: info@kronsohn.com</p>
-
 <h2>Umsatzsteuer</h2>
 <p>Hinweis gemäß §19 UStG:<br>Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.</p>
 </div>
@@ -408,7 +433,6 @@ WhatsApp Kanal
 <div id="privacy">
 <span class="close" onclick="closePrivacy()">&times;</span>
 <h1>Datenschutzerklärung</h1>
-
 <h2>1. Verantwortlicher</h2>
 <p>Matthias Wurach<br>KRONSOHN<br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
 <p>E-Mail: info@kronsohn.com</p>
