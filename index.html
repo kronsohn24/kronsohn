@@ -274,10 +274,22 @@ form button{
 }
 
 /* Live WhatsApp Button */
-#live-whatsapp{
+#live-whatsapp-container{
   position:fixed;
   bottom:20px;
   right:20px;
+  text-align:center;
+  z-index:9999;
+}
+
+#live-whatsapp-text{
+  color:white;
+  font-weight:600;
+  margin-bottom:5px;
+  text-shadow:0 1px 3px rgba(0,0,0,0.5);
+}
+
+#live-whatsapp{
   background:#25D366;
   color:white;
   border:none;
@@ -289,7 +301,6 @@ form button{
   align-items:center;
   justify-content:center;
   cursor:pointer;
-  z-index:9999;
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
   transition:0.3s;
 }
@@ -324,12 +335,10 @@ form button{
 <h3>Individuelle Gravuren</h3>
 <p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p>
 </div>
-
 <div class="service">
 <h3>Firmenlösungen</h3>
 <p>Logos, Werbematerialien und hochwertige Firmengeschenke.</p>
 </div>
-
 <div class="service">
 <h3>Einzelanfertigungen</h3>
 <p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p>
@@ -357,17 +366,14 @@ form button{
 <h3>Lasergravuren auf Holz</h3>
 <p>Dekorationen, Geschenke oder Firmenartikel.</p>
 </div>
-
 <div class="service">
 <h3>Metallgravuren</h3>
 <p>Robuste Gravuren für Werkzeuge und Schilder.</p>
 </div>
-
 <div class="service">
 <h3>Acryl & Glas</h3>
 <p>Elegante Gravuren für Pokale und Dekoration.</p>
 </div>
-
 <div class="service">
 <h3>Business Gravuren</h3>
 <p>Firmenlogos und Werbeartikel.</p>
@@ -394,11 +400,9 @@ form button{
 <option>Glas</option>
 <option>Acryl</option>
 <option>Kunststoff</option>
-<option>Keramik</option>
 </select>
 <button type="submit">Anfrage senden</button>
 </form>
-
 </div>
 
 <footer>
@@ -407,17 +411,18 @@ form button{
 <a onclick="openImpressum()">Impressum</a> |
 <a onclick="openPrivacy()">Datenschutzerklärung</a>
 </p>
-
 <button onclick="window.open('https://whatsapp.com/channel/0029Vb4BuBD1SWsrbJziUU0w','_blank')">
 WhatsApp Kanal
 </button>
 </footer>
 
 <!-- Live WhatsApp Button -->
+<div id="live-whatsapp-container">
+<div id="live-whatsapp-text">Direkt zu WhatsApp</div>
 <button id="live-whatsapp" onclick="window.open('https://wa.me/4915201990846','_blank')">💬</button>
-
 </div>
 
+<!-- Impressum & Datenschutz -->
 <div id="impressum">
 <span class="close" onclick="closeImpressum()">&times;</span>
 <h1>Impressum</h1>
@@ -436,10 +441,8 @@ WhatsApp Kanal
 <h2>1. Verantwortlicher</h2>
 <p>Matthias Wurach<br>KRONSOHN<br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
 <p>E-Mail: info@kronsohn.com</p>
-
 <h2>2. Allgemeine Hinweise</h2>
 <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken. Es werden keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.</p>
-
 <h2>3. Server-Logfiles</h2>
 <p>Der Hosting-Provider dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. Dazu gehören:</p>
 <ul>
@@ -451,16 +454,12 @@ WhatsApp Kanal
 <li>IP-Adresse</li>
 </ul>
 <p>Diese Daten sind nicht bestimmten Personen zuordenbar und dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit der Website.</p>
-
 <h2>4. Cookies</h2>
 <p>Diese Website verwendet keine Cookies zur Analyse, zum Tracking oder zur Speicherung personenbezogener Daten.</p>
-
 <h2>5. Ihre Rechte</h2>
 <p>Sie haben jederzeit das Recht auf Auskunft über eventuell gespeicherte personenbezogene Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten. Da auf dieser Website keine personenbezogenen Daten gespeichert werden, entfällt eine entsprechende Verarbeitung.</p>
-
 <h2>6. Änderungen dieser Datenschutzerklärung</h2>
 <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.</p>
-
 </div>
 
 <script>
