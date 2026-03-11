@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KRONSOHN</title>
-<link rel="icon" type="image/png" href="B-Icon.png">
+<link rel="icon" href="B-Icon.png" type="image/png">
 
 <style>
 
@@ -258,6 +258,18 @@ grid-template-columns:1fr;
 
 }
 
+input, select, textarea{
+background:rgba(255,255,255,0.1);
+color:white;
+border:none;
+border-radius:8px;
+margin-top:5px;
+padding:10px;
+width:100%;
+}
+
+textarea{ resize:none; }
+
 </style>
 </head>
 
@@ -273,17 +285,15 @@ grid-template-columns:1fr;
 <a onclick="showSection('start')">Start</a>
 <a onclick="showSection('about')">Über uns</a>
 <a onclick="showSection('services')">Dienstleistungen</a>
-<a onclick="showSection('contact')">Kontakt</a>
+<a onclick="showSection('contact')">Kontakt aufnehmen</a>
 </nav>
 
+<!-- START -->
 <div id="start" class="container section active">
-
 <h2>Willkommen bei KRONSOHN</h2>
-
 <p>Professionelle Laser- und Gravurarbeiten für Privatkunden und Unternehmen. Präzise, hochwertig und individuell gefertigt.</p>
 
 <div class="service-grid">
-
 <div class="service">
 <h3>Individuelle Gravuren</h3>
 <p>Personalisierte Gravuren für Geschenke oder besondere Anlässe.</p>
@@ -298,39 +308,27 @@ grid-template-columns:1fr;
 <h3>Einzelanfertigungen</h3>
 <p>Individuelle Designs und Sonderanfertigungen nach Wunsch.</p>
 </div>
-
 </div>
 
 <br><br>
-
 <button onclick="showSection('contact')">Kontakt aufnehmen</button>
-
 </div>
 
+<!-- ABOUT -->
 <div id="about" class="container section">
-
 <h2>Über uns</h2>
-
 <div class="about-box">
-
 <p><strong>KRONSOHN</strong> steht für präzise Lasergravuren und hochwertige individuelle Anfertigungen.</p>
-
 <p>Mit Leidenschaft und moderner Lasertechnik fertigen wir personalisierte Produkte für Privatkunden und Unternehmen.</p>
-
 <p>Ob Geschenke, Dekorationen oder Firmenartikel – jede Gravur wird mit höchster Genauigkeit umgesetzt.</p>
-
 <p><strong>Qualität, Präzision und Individualität stehen bei uns an erster Stelle.</strong></p>
-
+</div>
 </div>
 
-</div>
-
+<!-- SERVICES -->
 <div id="services" class="container section">
-
 <h2>Unsere Dienstleistungen</h2>
-
 <div class="service-grid">
-
 <div class="service">
 <h3>Lasergravuren auf Holz</h3>
 <p>Dekorationen, Geschenke oder Firmenartikel.</p>
@@ -350,43 +348,33 @@ grid-template-columns:1fr;
 <h3>Business Gravuren</h3>
 <p>Firmenlogos und Werbeartikel.</p>
 </div>
-
+</div>
 </div>
 
-</div>
-
+<!-- CONTACT -->
 <div id="contact" class="container section">
+<h2>Kontakt aufnehmen</h2>
 
-<h2>Kontakt</h2>
-
-<p><strong>E-Mail:</strong> info@kronsohn.com</p>
-<p><strong>Mobil:</strong> +49 15201990846</p>
-<p><strong>Telefon:</strong> +49 3606 / 604299</p>
-
-<br><br>
-
-<h2>Anfrageformular</h2>
-
-<form>
-
+<form action="https://formsubmit.co/info@kronsohn.com" method="POST" enctype="multipart/form-data">
+  
 <p>
 <label>Name</label><br>
-<input type="text" name="name" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+<input type="text" name="name" required>
 </p>
 
 <p>
 <label>E-Mail</label><br>
-<input type="email" name="email" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+<input type="email" name="email" required>
 </p>
 
 <p>
 <label>Telefon (optional)</label><br>
-<input type="tel" name="telefon" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+<input type="tel" name="telefon">
 </p>
 
 <p>
 <label>Material</label><br>
-<select name="material" style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;">
+<select name="material">
 <option>Holz</option>
 <option>Metall</option>
 <option>Glas</option>
@@ -395,24 +383,26 @@ grid-template-columns:1fr;
 
 <p>
 <label>Beschreibung der Gravur</label><br>
-<textarea name="beschreibung" rows="5" required style="width:100%;padding:10px;border-radius:8px;border:none;margin-top:5px;"></textarea>
+<textarea name="beschreibung" rows="5" required></textarea>
 </p>
 
 <p>
 <label>Datei hochladen (Logo / Bild)</label><br>
-<input type="file" name="datei" style="margin-top:5px;">
+<input type="file" name="datei">
 </p>
 
-<br>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://deine-seite.github.io/thanks.html">
 
+<br>
 <button type="submit">Anfrage senden</button>
 
 </form>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-
 <p>
 © 2026 KRONSOHN |
 <a onclick="openImpressum()">Impressum</a> |
@@ -422,51 +412,29 @@ grid-template-columns:1fr;
 <button onclick="window.open('https://whatsapp.com/channel/0029Vb4BuBD1SWsrbJziUU0w','_blank')">
 WhatsApp Kanal
 </button>
-
 </footer>
-
-<div id="impressum">
-
-<span class="close" onclick="closeImpressum()">&times;</span>
-
-<h1>Impressum</h1>
-
-<h2>Angaben gemäß § 5 TMG</h2>
-
-<p>
-<strong>Inhaber</strong><br>
-Matthias Wurach<br>
-KRONSOHN
-</p>
-
-<p>
-<strong>Adresse</strong><br>
-Auf der Rinne 2<br>
-37308 Heilbad Heiligenstadt<br>
-Deutschland
-</p>
-
-<h2>Kontakt</h2>
-
-<p>
-Telefon: +49 3606 / 604299<br>
-Mobil: +49 15201990846<br>
-E-Mail: info@kronsohn.com
-</p>
-
-<h2>Umsatzsteuer</h2>
-
-<p>
-Hinweis gemäß §19 UStG:<br>
-Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.
-</p>
 
 </div>
 
+<!-- IMPRESSUM -->
+<div id="impressum">
+<span class="close" onclick="closeImpressum()">&times;</span>
+<h1>Impressum</h1>
+
+<h2>Angaben gemäß § 5 TMG</h2>
+<p><strong>Inhaber</strong><br>Matthias Wurach<br>KRONSOHN</p>
+<p><strong>Adresse</strong><br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland</p>
+
+<h2>Kontakt</h2>
+<p>Telefon: +49 3606 / 604299<br>Mobil: +49 15201990846<br>E-Mail: info@kronsohn.com</p>
+
+<h2>Umsatzsteuer</h2>
+<p>Hinweis gemäß §19 UStG:<br>Als Kleinunternehmer im Sinne von §19 Abs.1 UStG wird keine Umsatzsteuer berechnet.</p>
+</div>
+
+<!-- PRIVACY -->
 <div id="privacy">
-
 <span class="close" onclick="closePrivacy()">&times;</span>
-
 <h1>Datenschutzerklärung</h1>
 
 <h2>1. Verantwortlicher</h2>
@@ -504,51 +472,26 @@ Deutschland
 
 <h2>6. Änderungen dieser Datenschutzerklärung</h2>
 <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.</p>
-
 </div>
 
 <script>
-
 function showSection(id){
-
-document.querySelectorAll('.section').forEach(s=>{
-s.classList.remove('active')
-})
-
+document.querySelectorAll('.section').forEach(s=>{ s.classList.remove('active') })
 document.getElementById(id).classList.add('active')
-
 window.scrollTo(0,0)
-
 }
 
-function openImpressum(){
-document.getElementById("impressum").style.display="block"
-}
-
-function closeImpressum(){
-document.getElementById("impressum").style.display="none"
-}
-
-function openPrivacy(){
-document.getElementById("privacy").style.display="block"
-}
-
-function closePrivacy(){
-document.getElementById("privacy").style.display="none"
-}
+function openImpressum(){ document.getElementById("impressum").style.display="block" }
+function closeImpressum(){ document.getElementById("impressum").style.display="none" }
+function openPrivacy(){ document.getElementById("privacy").style.display="block" }
+function closePrivacy(){ document.getElementById("privacy").style.display="none" }
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible")
-}
+if(entry.isIntersecting){ entry.target.classList.add("visible") }
 })
 })
-
-document.querySelectorAll(".service,.about-box").forEach(el=>{
-observer.observe(el)
-})
-
+document.querySelectorAll(".service,.about-box").forEach(el=>{ observer.observe(el) })
 </script>
 
 </body>
