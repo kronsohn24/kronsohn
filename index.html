@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KRONSOHN</title>
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="B-Icon.png">
-
 <style>
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -164,6 +161,48 @@ transition:0.3s;
 button:hover{
 background:#f0c437;
 transform:translateY(-2px);
+}
+
+/* Formulareingaben */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(212,160,23,0.6);
+  background: rgba(20,20,20,0.9);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #d4a017;
+  box-shadow: 0 0 10px rgba(212,160,23,0.6);
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23d4a017' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 40px;
 }
 
 /* Sections */
@@ -367,41 +406,36 @@ grid-template-columns:1fr;
 
 <p><strong>Telefon:</strong> +49 3606 / 604299</p>
 
-<h2>Anfrageformular</h2>
+<h2>2. Anfrageformular statt nur E-Mail</h2>
 
-<form action="https://formspree.io/f/xaqpopyg" method="POST">
+<form action="https://formspree.io/f/xaqpopyg" method="POST" enctype="multipart/form-data">
 
-<p>
-<label>Name</label><br>
-<input type="text" name="name" required>
-</p>
+<label for="name">Name*</label>
+<input type="text" id="name" name="name" placeholder="Ihr Name" required>
 
-<p>
-<label>E-Mail</label><br>
-<input type="email" name="email" required>
-</p>
+<label for="email">E-Mail*</label>
+<input type="email" id="email" name="_replyto" placeholder="Ihre E-Mail" required>
 
-<p>
-<label>Telefon (optional)</label><br>
-<input type="text" name="telefon">
-</p>
+<label for="phone">Telefon</label>
+<input type="text" id="phone" name="phone" placeholder="Optional">
 
-<p>
-<label>Beschreibung der Gravur</label><br>
-<textarea name="beschreibung" rows="4" required></textarea>
-</p>
+<label for="description">Beschreibung der Gravur*</label>
+<textarea id="description" name="description" placeholder="Ihre Gravur-Beschreibung" required></textarea>
 
-<p>
-<label>Material</label><br>
-<select name="material">
-<option>Holz</option>
-<option>Metall</option>
-<option>Glas</option>
-<option>Acryl</option>
-<option>Leder</option>
-<option>Kunststoff</option>
+<label for="material">Material*</label>
+<select id="material" name="material" required>
+<option value="">Bitte auswählen</option>
+<option value="Holz">Holz</option>
+<option value="Metall">Metall</option>
+<option value="Glas">Glas</option>
+<option value="Acryl">Acryl</option>
+<option value="Kunststoff">Kunststoff</option>
+<option value="Keramik">Keramik</option>
+<option value="Leder">Leder</option>
 </select>
-</p>
+
+<label for="file">Datei hochladen (Logo/Bild)</label>
+<input type="file" id="file" name="file">
 
 <button type="submit">Anfrage senden</button>
 
@@ -510,11 +544,15 @@ Deutschland
 <script>
 
 function showSection(id){
+
 document.querySelectorAll('.section').forEach(s=>{
 s.classList.remove('active')
 })
+
 document.getElementById(id).classList.add('active')
+
 window.scrollTo(0,0)
+
 }
 
 function openImpressum(){
