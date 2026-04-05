@@ -293,9 +293,34 @@
     <a id="whatsapp-button" href="https://wa.me/4915201990846" target="_blank"><span>Direkt zu WhatsApp</span> 💬</a>
 
     <script>
-        function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
-        window.onclick = function(event) { if (event.target.className === 'modal') { closeModal(event.target.id); } }
+        function openModal(id) { 
+            document.getElementById(id).style.display = "block"; 
+            document.body.style.overflow = "hidden"; 
+        }
+        
+        function closeModal(id) { 
+            document.getElementById(id).style.display = "none"; 
+            document.body.style.overflow = "auto"; 
+        }
+
+        // Schließen bei Klick außerhalb des Modals
+        window.onclick = function(event) { 
+            if (event.target.className === 'modal') { 
+                closeModal(event.target.id); 
+            } 
+        }
+
+        // Schließen mit der ESC-Taste
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === "block") {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
