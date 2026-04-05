@@ -48,30 +48,11 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--warm-yellow);
-            text-transform: uppercase;
+        /* LOGO */
+        .logo img {
+            height: 45px;
+            display: block;
             cursor: pointer;
-            text-decoration: none;
-        }
-
-        nav ul { display: flex; list-style: none; gap: 15px; }
-        nav a { 
-            text-decoration: none; 
-            color: var(--warm-yellow); 
-            font-weight: 600; 
-            font-size: 14px; 
-            padding: 8px 16px;
-            border-radius: 30px;
-            transition: var(--transition); 
-            cursor: pointer; 
-        }
-        nav a:hover { 
-            background: var(--warm-yellow); 
-            color: #000; 
         }
 
         .hero {
@@ -89,65 +70,6 @@
         .hero h1 span { color: var(--warm-yellow); }
         .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 40px; color: var(--text-muted); }
 
-        .btn {
-            padding: 14px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: var(--transition);
-            display: inline-block;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-yellow { background: var(--warm-yellow); color: #000; margin-right: 15px; }
-        .btn-yellow:hover { background: #f0c437; transform: translateY(-2px); }
-        .btn-outline { border: 2px solid var(--warm-yellow); color: var(--warm-yellow); background: transparent; }
-        .btn-outline:hover { background: var(--warm-yellow); color: #000; }
-
-        section { padding: 100px 0; }
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 60px; text-transform: uppercase; color: var(--warm-yellow); }
-
-        .about-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-image { flex: 1; min-width: 300px; }
-        .about-image img { width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .about-box { background: rgba(20,20,20,0.9); padding: 35px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); margin-top: 25px; }
-
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .service-card {
-            background: rgba(20,20,20,0.9);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
-            transition: var(--transition);
-        }
-        .service-card:hover { border-color: var(--warm-yellow); transform: translateY(-10px); }
-        .service-card h3 { color: var(--warm-yellow); margin-bottom: 15px; }
-
-        .material-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .material-item { position: relative; height: 250px; overflow: hidden; border-radius: 15px; }
-        .material-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .material-item:hover img { transform: scale(1.1); }
-        .material-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
-
-        .contact-box { 
-            background: rgba(20,20,20,0.9); 
-            padding: 50px; 
-            border-radius: 20px; 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 50px; 
-            border: 1px solid rgba(255,255,255,0.08); 
-        }
-
-        input, select, textarea { 
-            width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(0,0,0,0.6); 
-            border: 1px solid rgba(212,160,23,0.4); color: #fff; border-radius: 12px; font-family: inherit; 
-        }
-
         footer { padding: 50px 0; border-top: 3px solid var(--warm-yellow); text-align: center; font-size: 13px; color: #555; background: #000; }
     </style>
 </head>
@@ -156,7 +78,10 @@
 
 <header>
     <div class="container header-content">
-        <a href="#" class="logo">KRONSOHN</a>
+        <!-- Klickbares Logo -->
+        <a href="#">
+            <img src="logo.png" alt="KRONSOHN Logo" class="logo">
+        </a>
     </div>
 </header>
 
