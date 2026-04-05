@@ -8,16 +8,15 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="B-Icon.png">
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-black: #0f0f0f;
-            --bg-card: #1a1a1a;
             --warm-yellow: #ffb000;
             --text-white: #ffffff;
             --text-muted: #a0a0a0;
-            --transition: all 0.3s ease-in-out;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,13 +26,13 @@
             background-color: var(--bg-black);
             color: var(--text-white);
             line-height: 1.6;
-            scroll-behavior: smooth;
         }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+        /* HEADER */
         header {
-            padding: 15px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             background: rgba(0, 0, 0, 0.9);
@@ -44,33 +43,54 @@
 
         .header-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
         }
 
         /* LOGO */
-        .logo img {
-            height: 45px;
-            display: block;
-            cursor: pointer;
+        .logo {
+            display: inline-block;
         }
 
+        .logo img {
+            height: 40px;   /* Größe hier ändern wenn nötig */
+            width: auto;
+            display: block;
+        }
+
+        /* HERO */
         .hero {
             height: 85vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('holz.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
 
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
-        .hero h1 span { color: var(--warm-yellow); }
-        .hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 40px; color: var(--text-muted); }
+        .hero h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
 
-        footer { padding: 50px 0; border-top: 3px solid var(--warm-yellow); text-align: center; font-size: 13px; color: #555; background: #000; }
+        .hero span {
+            color: var(--warm-yellow);
+        }
+
+        .hero p {
+            margin-top: 15px;
+            color: var(--text-muted);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 0;
+            border-top: 3px solid var(--warm-yellow);
+            text-align: center;
+            background: #000;
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -79,16 +99,16 @@
 <header>
     <div class="container header-content">
         <!-- Klickbares Logo -->
-        <a href="#">
-            <img src="logo.png" alt="KRONSOHN Logo" class="logo">
+        <a href="#" class="logo">
+            <img src="logo.png" alt="KRONSOHN Logo">
         </a>
     </div>
 </header>
 
 <section class="hero">
-    <div class="container">
+    <div>
         <h1>Präzision trifft auf <span>Leidenschaft</span></h1>
-        <p>Ihre Experten für einzigartige Personalisierung auf Metall, Holz, Leder und Kunststoff.</p>
+        <p>Ihre Experten für Gravuren auf Holz, Metall, Leder und mehr.</p>
     </div>
 </section>
 
