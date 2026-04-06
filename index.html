@@ -138,7 +138,8 @@
 
         /* --- Kontakt --- */
         .contact-box { background: rgba(20,20,20,0.9); padding: clamp(20px, 5vw, 50px); border-radius: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border: 1px solid rgba(255,255,255,0.08); }
-        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 176, 0, 0.4); color: #fff; border-radius: 12px; font-family: inherit; font-size: 16px; }
+        .contact-info p { margin-bottom: 10px; }
+        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 176, 0, 0.4); color: #fff; border-radius: 12px; font-family: inherit; font-size: 16px; /* Verhindert Zoom auf iOS */ }
         input:focus, select:focus, textarea:focus { outline: none; border-color: var(--warm-yellow); }
 
         /* --- Modals --- */
@@ -152,21 +153,41 @@
         #whatsapp-button { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 12px 18px; border-radius: 50px; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999; transition: 0.3s; font-size: 14px; }
 
         footer { padding: 40px 0; border-top: 3px solid var(--warm-yellow); text-align: center; font-size: 12px; color: #777; background: #000; }
-        footer a { color: var(--warm-yellow); text-decoration: none; margin: 0 5px; font-weight: 600; display: inline-block; padding: 5px; cursor: pointer; }
+        footer a { color: var(--warm-yellow); text-decoration: none; margin: 0 5px; font-weight: 600; display: inline-block; padding: 5px; }
 
         /* --- Responsive Queries --- */
-        @media (max-width: 992px) { .contact-box { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) {
+            .contact-box { grid-template-columns: 1fr; }
+        }
 
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
-            nav { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: #000; padding-top: 80px; transition: 0.4s; box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: #000;
+                padding-top: 80px;
+                transition: 0.4s;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            }
+
             nav.active { right: 0; }
+
             nav ul { flex-direction: column; align-items: center; gap: 20px; }
             nav a { font-size: 18px; width: 100%; text-align: center; }
-            .hero { background-attachment: scroll; }
+
+            .hero { background-attachment: scroll; } /* Bessere Performance mobil */
             .hero-btns { flex-direction: column; align-items: center; }
             .btn { width: 100%; max-width: 300px; }
-            #whatsapp-button span { display: none; }
+            
+            .about-text { text-align: center; }
+            .about-box { text-align: left; }
+            
+            #whatsapp-button span { display: none; } /* Nur Icon auf kleinen Handys */
             #whatsapp-button { padding: 15px; border-radius: 50%; }
         }
     </style>
@@ -214,6 +235,29 @@
                 <div class="about-image">
                     <img src="https://via.placeholder.com/600x400?text=KRONSOHN+Expertise" alt="Unsere Arbeit">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: #0a0a0a;">
+        <div class="container">
+            <h2 class="section-title">Unsere Dienstleistungen</h2>
+            <div class="service-grid">
+                <div class="service-card"><h3>Individuelle Gravuren</h3><p>Personalisierte Unikate für besondere Anlässe und Geschenke.</p></div>
+                <div class="service-card"><h3>Firmenlösungen</h3><p>Logos, Werbeartikel und industrielle Kennzeichnungen in Serie.</p></div>
+                <div class="service-card"><h3>Einzelstücke</h3><p>Sonderanfertigungen nach Ihren ganz persönlichen Wünschen.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="materials">
+        <div class="container">
+            <h2 class="section-title">Materialvielfalt</h2>
+            <div class="material-grid">
+                <div class="material-item"><img src="https://via.placeholder.com/400x300?text=Holz" alt="Holz"><div class="material-overlay"><h3>Holz</h3></div></div>
+                <div class="material-item"><img src="https://via.placeholder.com/400x300?text=Metall" alt="Metall"><div class="material-overlay"><h3>Metall</h3></div></div>
+                <div class="material-item"><img src="https://via.placeholder.com/400x300?text=Glas" alt="Glas"><div class="material-overlay"><h3>Glas / Acryl</h3></div></div>
+                <div class="material-item"><img src="https://via.placeholder.com/400x300?text=Leder" alt="Leder"><div class="material-overlay"><h3>Leder</h3></div></div>
             </div>
         </div>
     </section>
@@ -277,54 +321,58 @@
         <div class="modal-content">
             <h1>Datenschutzerklärung</h1>
             <h2>1. Verantwortlicher</h2>
-            <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
-            <p>Matthias Wurach<br>KRONSOHN<br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>Deutschland<br>E-Mail: info@kronsohn.com</p>
-            
+            <p>Matthias Wurach<br>KRONSOHN<br>Auf der Rinne 2<br>37308 Heilbad Heiligenstadt<br>E-Mail: info@kronsohn.com</p>
             <h2>2. Allgemeine Hinweise</h2>
-            <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken. Es werden keine personenbezogenen Daten aktiv erhoben, gespeichert oder verarbeitet.</p>
-            
+            <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Website dient ausschließlich zu Informationszwecken...</p>
             <h2>3. Server-Logfiles</h2>
-            <p>Der Hosting-Provider dieser Website erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. Dies sind beispielsweise:</p>
-            <ul style="list-style-position: inside; margin-bottom: 15px;">
-                <li>Browsertyp und Browserversion</li>
-                <li>verwendetes Betriebssystem</li>
-                <li>Referrer URL</li>
-                <li>Hostname des zugreifenden Rechners</li>
-                <li>Uhrzeit der Serveranfrage</li>
-                <li>IP-Adresse</li>
-            </ul>
-            <p>Diese Daten sind nicht bestimmten Personen zuordenbar und dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit der Website.</p>
-            
+            <p>Browsertyp, Betriebssystem, IP-Adresse etc. werden automatisch vom Provider gespeichert.</p>
             <h2>4. Cookies</h2>
-            <p>Diese Website verwendet keine Cookies zur Analyse, zum Tracking oder zur Speicherung personenbezogener Daten.</p>
-            
-            <h2>5. Ihre Rechte</h2>
-            <p>Sie haben jederzeit das Recht auf Auskunft über eventuell gespeicherte personenbezogene Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten. Da auf dieser Website keine personenbezogenen Daten gespeichert werden, entfällt eine entsprechende Verarbeitung.</p>
-            
-            <h2>6. Änderungen dieser Datenschutzerklärung</h2>
-            <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Website umzusetzen.</p>
+            <p>Diese Website verwendet keine Cookies.</p>
         </div>
     </div>
     
     <a id="whatsapp-button" href="https://wa.me/4915201990846" target="_blank"><span>Direkt zu WhatsApp</span> 💬</a>
 
     <script>
-        // Menu Toggle
+        // Menu Toggle Logic
         const menuToggle = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
-        menuToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); });
-        function toggleMenu() { if (window.innerWidth <= 768) { navMenu.classList.remove('active'); } }
 
-        // Modals
-        function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
-        window.onclick = function(event) { if (event.target.className === 'modal') { closeModal(event.target.id); } }
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-        // ESC Key
+        function toggleMenu() {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+        }
+
+        // Modal Logic
+        function openModal(id) { 
+            document.getElementById(id).style.display = "block"; 
+            document.body.style.overflow = "hidden"; 
+        }
+        
+        function closeModal(id) { 
+            document.getElementById(id).style.display = "none"; 
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) { 
+            if (event.target.className === 'modal') { 
+                closeModal(event.target.id); 
+            } 
+        }
+
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape") {
                 const modals = document.querySelectorAll('.modal');
-                modals.forEach(modal => { if (modal.style.display === "block") closeModal(modal.id); });
+                modals.forEach(modal => {
+                    if (modal.style.display === "block") {
+                        closeModal(modal.id);
+                    }
+                });
             }
         });
     </script>
